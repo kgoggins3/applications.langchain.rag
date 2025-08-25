@@ -1,0 +1,23 @@
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j-local
+    ports:
+      - "7474:7474"  # HTTP web UI
+      - "7687:7687"  # Bolt protocol (drivers)
+    environment:
+      - NEO4J_AUTH=neo4j/password   # username: neo4j, password: password
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/import:/import
+      - ./neo4j/logs:/logs
+      - ./neo4j/plugins:/plugins
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant-local
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC API
+    volumes:
+      - ./qdrant/storage:/qdrant/storage
