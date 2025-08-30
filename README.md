@@ -19,3 +19,11 @@ Tracks and traces the LangChain functions to follow the output and performance.
 
 # RAGAS
 Anotehr layer of evaluation of the performance of the RAG model. 
+
+# Environment Setup
+
+cmd:
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+docker compose up -d

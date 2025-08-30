@@ -1,25 +1,52 @@
-from qdrant_client.models import Distance, VectorParams
-from neo4j import GraphDatabase
-from qdrant_client import QdrantClient, models
 from dotenv import load_dotenv
-from pydantic import BaseModel
-from openai import OpenAI
-from collections import defaultdict
-from neo4j_graphrag.retrievers import QdrantNeo4jRetriever
-import uuid
 import os
 
+# Load environment variables
 load_dotenv()
 
-client = QdrantClient(url="http://localhost:6333")
+# Neo4j
+from neo4j import GraphDatabase
 
-client.create_collection(
-    collection_name="test_collection",
-    vectors_config=VectorParams(size=4, distance=Distance.DOT),
-)
+neo4j_uri = os.getenv("NEO4J_URI")
+neo4j_user = os.getenv("NEO4J_USER")
+neo4j_password = os.getenv("NEO4J_PASSWORD")
 
-driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "test"))
+driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
 
-with driver.session() as session:
-    result = session.run("RETURN 'Neo4j connection successful!' AS msg")
-    print(result.single()["msg"])
+def test_neo4j():
+    with driver.session() as session:
+        result = session.run("RETURN 'Hello Neo4j!' AS message")
+        for record in result:
+            print(record["message"])
+
+# Qdrant
+from qdrant_client import QdrantClient
+
+qdrant_client = QdrantClient(host="localhost", port=6333)
+
+def test_qdrant():
+    # Check if Qdrant is alive
+    info = qdrant_client.get_collections()
+    print("Qdrant collections:", info)
+
+# LangChain placeholder
+from langchain.schema import HumanMessage, SystemMessage
+
+def test_langchain():
+    messages = [
+        SystemMessage(content="You are a helpful assistant."),
+        HumanMessage(content="Hello LangChain!")
+    ]
+    for msg in messages:
+        print(f"{msg.type}: {msg.content}")
+
+# Run tests
+if __name__ == "__main__":
+    print("Testing Neo4j connection...")
+    test_neo4j()
+    
+    print("\nTesting Qdrant connection...")
+    test_qdrant()
+    
+    print("\nTesting LangChain setup...")
+    test_langchain()
