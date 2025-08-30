@@ -8,10 +8,8 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/password   # username: neo4j, password: password
     volumes:
-      - ./neo4j/data:/data
-      - ./neo4j/import:/import
-      - ./neo4j/logs:/logs
-      - ./neo4j/plugins:/plugins
+      - ./data/neo4j:/data
+      - ./import:/import
 
   qdrant:
     image: qdrant/qdrant:latest
@@ -20,4 +18,4 @@ services:
       - "6333:6333"   # REST API
       - "6334:6334"   # gRPC API
     volumes:
-      - ./qdrant/storage:/qdrant/storage
+      - ./data/qdrant:/qdrant/storage
