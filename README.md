@@ -7,8 +7,10 @@ This application is a Retrieval-Augmented Generation (RAG) chatbot built with La
 
 # GraphRAG
 Builds knowledge graphs to capture entities and their relationships. This allows for the ability to answer complex queries, as there is a deeper understanding of context.
-**Vector Database:** Uses Qdrant to persist and store unique IDs, relationships, and embeddings, for similarity-based retrieval. 
-**Graph Database:** Uses Neo4j to create the graph structure and relationships of the retrieved data. 
+## Vector Database: 
+Uses Qdrant to persist and store unique IDs, relationships, and embeddings, for similarity-based retrieval. 
+## Graph Database:
+ Uses Neo4j to create the graph structure and relationships of the retrieved data. 
 
 To start the database run : docker compose up -d
 

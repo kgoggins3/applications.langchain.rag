@@ -11,6 +11,7 @@ neo4j_uri = os.getenv("NEO4J_URI")
 neo4j_user = os.getenv("NEO4J_USER")
 neo4j_password = os.getenv("NEO4J_PASSWORD")
 
+#initialize neo4j database
 driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
 
 def test_neo4j():
@@ -50,3 +51,31 @@ if __name__ == "__main__":
     
     print("\nTesting LangChain setup...")
     test_langchain()
+
+# ingest data 
+
+# output parser class structure to struture the LLM result into graph components
+class single(BaseModel): 
+    node: str
+    target_node: str
+    relationship: str
+
+class GraphComponents(BaseModel):
+    graph: list[single]
+
+# chatgpt llm initialize 
+llm = LangChainCustom(
+    client_id=st.session_state.client_id,
+    client_secret=st.session_state.client_secret,
+    model=st.session_state.model_name,
+    temperature=st.session_state.temperature,
+    system_prompt=st.session_state.system_message
+)
+
+#next steps is to create the output parser, which is an llm that retrieves text docs and 
+# converts it into the graph structure 
+
+#also need function to load documents 
+
+#then , once the llm formats it, it needs to be stored in the databases 
+
