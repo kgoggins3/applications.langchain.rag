@@ -72,10 +72,24 @@ llm = LangChainCustom(
     system_prompt=st.session_state.system_message
 )
 
+#qdrant collection for data storage
+qdrant_client.recreate_collection(
+        collection_name=documents,
+        vectors_config=VectorParams(size=384, distance=Distance.DOT),
+    )
+
 #next steps is to create the output parser, which is an llm that retrieves text docs and 
 # converts it into the graph structure 
 
 #also need function to load documents 
+def load_documents(folder_path='documents'):
+    docs = []
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".txt"):
+            with open(os.path.join(folder_path, filename), "r", encoding="utf-8") as f:
+                text = f.read()
+                docs.append({"filename": filename, "text": text})
+    return docs
 
 #then , once the llm formats it, it needs to be stored in the databases 
 
