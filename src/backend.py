@@ -1,6 +1,9 @@
 from dotenv import load_dotenv
 import os
 
+import streamlit as st
+
+
 # Load environment variables
 load_dotenv()
 
@@ -41,6 +44,57 @@ def test_langchain():
     for msg in messages:
         print(f"{msg.type}: {msg.content}")
 
+# from langchain_community.document_loaders import PyPDFLoader
+# from PyPDF2 import PdfReader
+
+from PyPDF2 import PdfReader
+#also need function to load documents from stored file path
+def load_documents(folder_path="documents"):
+    docs = []
+    
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+
+        # Handle .txt files
+        if filename.lower().endswith(".txt"):
+            with open(file_path, "r", encoding="utf-8") as f:
+                text = f.read()
+                docs.append({"filename": filename, "text": text})
+
+        # Handle .pdf files
+        elif filename.lower().endswith(".pdf"):
+            reader = PdfReader(file_path)
+            text = ""
+            for page in reader.pages:
+                text += page.extract_text() or ""  # Extract each page safely
+            docs.append({"filename": filename, "text": text})
+
+    return docs
+
+
+def main():
+    st.set_page_config(layout="wide")
+    st.title("Test GPT")
+
+    col1, col2 = st.columns([2, 1])
+
+    with col1:
+        st.subheader("Upload Documents")
+
+        uploaded_file = st.file_uploader("Upload your document:")
+
+        if uploaded_file is not None:
+            file_path = os.path.join("documents", uploaded_file.name)
+            with open(file_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+                
+            st.success(f"Saved {uploaded_file.name}!")
+
+        docs = load_documents("documents")
+        st.write(docs)
+
+
+
 # Run tests
 if __name__ == "__main__":
     print("Testing Neo4j connection...")
@@ -52,44 +106,70 @@ if __name__ == "__main__":
     print("\nTesting LangChain setup...")
     test_langchain()
 
+    main()
+
+
 # ingest data 
 
 # output parser class structure to struture the LLM result into graph components
-class single(BaseModel): 
-    node: str
-    target_node: str
-    relationship: str
+# class single(BaseModel): 
+#     node: str
+#     target_node: str
+#     relationship: str
 
-class GraphComponents(BaseModel):
-    graph: list[single]
+# class GraphComponents(BaseModel):
+#     graph: list[single]
 
-# chatgpt llm initialize 
-llm = LangChainCustom(
-    client_id=st.session_state.client_id,
-    client_secret=st.session_state.client_secret,
-    model=st.session_state.model_name,
-    temperature=st.session_state.temperature,
-    system_prompt=st.session_state.system_message
-)
 
 #qdrant collection for data storage
-qdrant_client.recreate_collection(
-        collection_name=documents,
-        vectors_config=VectorParams(size=384, distance=Distance.DOT),
-    )
+# qdrant_client.recreate_collection(
+#         collection_name=documents,
+#         vectors_config=VectorParams(size=384, distance=Distance.DOT),
+#     )
 
 #next steps is to create the output parser, which is an llm that retrieves text docs and 
 # converts it into the graph structure 
 
-#also need function to load documents 
-def load_documents(folder_path='documents'):
-    docs = []
-    for filename in os.listdir(folder_path):
-        if filename.endswith(".txt"):
-            with open(os.path.join(folder_path, filename), "r", encoding="utf-8") as f:
-                text = f.read()
-                docs.append({"filename": filename, "text": text})
-    return docs
+
 
 #then , once the llm formats it, it needs to be stored in the databases 
+
+
+        # Display chat history
+        # if st.session_state.chat_history:
+        #     st.markdown("### Conversation History")
+        #     for entry in st.session_state.chat_history:
+        #         st.markdown(f"**User:** {entry['query']}")
+        #         st.markdown(f"**Assistant:** {entry['answer']}")
+        #         st.markdown("---")
+        # # Input for new query
+        # query = st.text_input("Enter your question", "")
+        # if st.button("Get Answer") and query:
+        #     # chatgpt llm initialize 
+        #     llm = LangChainCustom(
+        #         client_id=st.session_state.client_id,
+        #         client_secret=st.session_state.client_secret,
+        #         model=st.session_state.model_name,
+        #         temperature=st.session_state.temperature,
+        #         system_prompt=st.session_state.system_message
+        #     )
+        #     # Build prompt template from custom prompt
+        #     prompt_template = PromptTemplate.from_template(st.session_state.custom_prompt)
+        #     # Create conversational chain with current settings
+        #     qa_chain = create_conversational_chain(
+        #         st.session_state.vectorstore,
+        #         llm,
+        #         prompt_template,
+        #         st.session_state.memory,
+        #         st.session_state.k_value
+        #     )
+        #     result = qa_chain({"question": query})
+        #     answer = result.get("answer", "No answer returned.")
+        #     source_docs = result.get("source_documents", [])
+        #     # Append current turn to chat history
+        #     st.session_state.chat_history.append({"query": query, "answer": answer})
+        #     # Display answer and sources
+        #     st.markdown("## Answer:")
+        #     st.write(answer)
+        #     st.markdown("### Sources Used:")
 
