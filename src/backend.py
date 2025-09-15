@@ -144,6 +144,7 @@ def main():
                     st.write(f"Processing: {doc['filename']}")
         
                     graph = openai_llm_parser(doc["text"])
+                    st.write(graph)
 
 
 
