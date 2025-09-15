@@ -3,6 +3,7 @@ import os
 
 import streamlit as st
 
+from graph_parse import openai_llm_parser
 
 # Load environment variables
 load_dotenv()
@@ -71,6 +72,42 @@ def load_documents(folder_path="documents"):
 
     return docs
 
+#function to load teh info stored in documents and format in a way for graphrag
+# def extract_documents(text):
+#     response = client.chat.completions.create(
+#         model="gpt-4o-mini",  # small, cheap LLM
+#         response_format={"type": "json_object"},
+#         messages=[
+#             {"role": "system", "content": """
+#                 You are a precise graph extractor. Extract relationships as JSON:
+#                 {
+#                     "graph": [
+#                         {"node": "Entity A", "target_node": "Entity B", "relationship": "REL_TYPE"}
+#                     ]
+#                 }
+#             """},
+#             {"role": "user", "content": text}
+#         ]
+#     )
+#     return response.choices[0].message.parsed 
+
+# client_id = os.getenv("CLIENT_ID")
+# client_secret = os.getenv("CLIENT_SECRET")
+# prompt = """
+#             You are a precise graph relationship extractor. Extract all 
+#             relationships from the text and format them as a JSON object 
+#             with this exact structure:
+#             {
+#                 "graph": [
+#                     {"node": "Person/Entity", 
+#                     "target_node": "Related Entity", 
+#                     "relationship": "Type of Relationship"}
+#                 ]
+#             }
+#             Include ALL relationships mentioned in the text, including implicit ones. 
+#             Be thorough and precise.
+#         """
+
 
 def main():
     st.set_page_config(layout="wide")
@@ -87,11 +124,28 @@ def main():
             file_path = os.path.join("documents", uploaded_file.name)
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
+
+                docs = load_documents("documents")
                 
             st.success(f"Saved {uploaded_file.name}!")
+            st.write(docs)
 
-        docs = load_documents("documents")
-        st.write(docs)
+            if st.button('Graph'):
+
+            # llm = LangChainCustom(
+            #     client_id=client_id,
+            #     client_secret=client_secret,
+            #     model="gpt-4o",
+            #     temperature=0,
+            #     system_prompt=prompt
+            # )
+
+                for doc in docs: 
+                    st.write(f"Processing: {doc['filename']}")
+        
+                    graph = openai_llm_parser(doc["text"])
+
+
 
 
 
@@ -109,16 +163,7 @@ if __name__ == "__main__":
     main()
 
 
-# ingest data 
 
-# output parser class structure to struture the LLM result into graph components
-# class single(BaseModel): 
-#     node: str
-#     target_node: str
-#     relationship: str
-
-# class GraphComponents(BaseModel):
-#     graph: list[single]
 
 
 #qdrant collection for data storage
