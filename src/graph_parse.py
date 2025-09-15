@@ -1,7 +1,13 @@
 from pydantic import BaseModel
 from openai import OpenAI 
+from dotenv import load_dotenv
+import os
 
-client = OpenAI()
+load_dotenv()
+
+openai_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=openai_key)
 #ingest data 
 
 #pydantic models 
