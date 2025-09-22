@@ -72,43 +72,6 @@ def load_documents(folder_path="documents"):
 
     return docs
 
-#function to load teh info stored in documents and format in a way for graphrag
-# def extract_documents(text):
-#     response = client.chat.completions.create(
-#         model="gpt-4o-mini",  # small, cheap LLM
-#         response_format={"type": "json_object"},
-#         messages=[
-#             {"role": "system", "content": """
-#                 You are a precise graph extractor. Extract relationships as JSON:
-#                 {
-#                     "graph": [
-#                         {"node": "Entity A", "target_node": "Entity B", "relationship": "REL_TYPE"}
-#                     ]
-#                 }
-#             """},
-#             {"role": "user", "content": text}
-#         ]
-#     )
-#     return response.choices[0].message.parsed 
-
-# client_id = os.getenv("CLIENT_ID")
-# client_secret = os.getenv("CLIENT_SECRET")
-# prompt = """
-#             You are a precise graph relationship extractor. Extract all 
-#             relationships from the text and format them as a JSON object 
-#             with this exact structure:
-#             {
-#                 "graph": [
-#                     {"node": "Person/Entity", 
-#                     "target_node": "Related Entity", 
-#                     "relationship": "Type of Relationship"}
-#                 ]
-#             }
-#             Include ALL relationships mentioned in the text, including implicit ones. 
-#             Be thorough and precise.
-#         """
-
-
 def main():
     st.set_page_config(layout="wide")
     st.title("Test GPT")
@@ -164,9 +127,6 @@ if __name__ == "__main__":
     main()
 
 
-
-
-
 #qdrant collection for data storage
 # qdrant_client.recreate_collection(
 #         collection_name=documents,
@@ -176,7 +136,41 @@ if __name__ == "__main__":
 #next steps is to create the output parser, which is an llm that retrieves text docs and 
 # converts it into the graph structure 
 
+#function to load teh info stored in documents and format in a way for graphrag
+# def extract_documents(text):
+#     response = client.chat.completions.create(
+#         model="gpt-4o-mini",  # small, cheap LLM
+#         response_format={"type": "json_object"},
+#         messages=[
+#             {"role": "system", "content": """
+#                 You are a precise graph extractor. Extract relationships as JSON:
+#                 {
+#                     "graph": [
+#                         {"node": "Entity A", "target_node": "Entity B", "relationship": "REL_TYPE"}
+#                     ]
+#                 }
+#             """},
+#             {"role": "user", "content": text}
+#         ]
+#     )
+#     return response.choices[0].message.parsed 
 
+# client_id = os.getenv("CLIENT_ID")
+# client_secret = os.getenv("CLIENT_SECRET")
+# prompt = """
+#             You are a precise graph relationship extractor. Extract all 
+#             relationships from the text and format them as a JSON object 
+#             with this exact structure:
+#             {
+#                 "graph": [
+#                     {"node": "Person/Entity", 
+#                     "target_node": "Related Entity", 
+#                     "relationship": "Type of Relationship"}
+#                 ]
+#             }
+#             Include ALL relationships mentioned in the text, including implicit ones. 
+#             Be thorough and precise.
+#         """
 
 #then , once the llm formats it, it needs to be stored in the databases 
 
