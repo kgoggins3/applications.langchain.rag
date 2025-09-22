@@ -1,12 +1,17 @@
 from dotenv import load_dotenv
 import os
+import re
+from openai import OpenAI 
 
 import streamlit as st
 
 from graph_parse import openai_llm_parser
+from test_resume import chunk_resume_text, extract_graph_from_resume, relationships_to_cypher
 
 # Load environment variables
 load_dotenv()
+
+openai_key = os.getenv("OPENAI_API_KEY")
 
 # Neo4j
 from neo4j import GraphDatabase
@@ -24,14 +29,90 @@ def test_neo4j():
         for record in result:
             print(record["message"])
 
+def safe_relationship_type(r: str) -> str:
+    """
+    Convert any string to a valid Neo4j relationship type:
+    - Only letters, numbers, and underscores
+    - Must start with a letter (prepend 'R_' if it starts with a number)
+    - Collapse multiple underscores
+    - Uppercase
+    """
+    r = re.sub(r"[^a-zA-Z0-9]", "_", r)  # replace invalid chars
+    r = re.sub(r"_+", "_", r)            # collapse multiple underscores
+
+    # prepend 'R_' if starts with number
+    if re.match(r"^\d", r):
+        r = f"R_{r}"
+
+    return r.upper()
+
+def load_relationships_to_neo4j(rels):
+    with driver.session() as session:
+        for rel in rels:
+            r_type = safe_relationship_type(rel['relationship'])
+            
+            query = f"""
+            MERGE (a:Entity {{name: $node_a}})
+            MERGE (b:Entity {{name: $node_b}})
+            MERGE (a)-[r:{r_type}]->(b)
+            SET r.chunk_id = $chunk_id, r.file_id = $file_id, r.section = $section
+            """
+            
+            session.run(query, {
+                "node_a": rel["node"],
+                "node_b": rel["target_node"],
+                "chunk_id": rel["chunk_id"],
+                "file_id": rel["file_id"],
+                "section": rel["section"]
+            })
+
 # Qdrant
 from qdrant_client import QdrantClient
+from qdrant_client.http import models
+import uuid
 
-qdrant_client = QdrantClient(host="localhost", port=6333)
+
+qdrant = QdrantClient(host="localhost", port=6333)
+client = OpenAI(api_key=openai_key)
+
+COLLECTION_NAME = "resume_chunks"
+
+def create_qdrant_collection():
+    qdrant.recreate_collection(
+        collection_name=COLLECTION_NAME,
+        vectors_config=models.VectorParams(size=1536, distance=models.Distance.COSINE)
+    )
+
+def embed_text(text: str):
+    emb = client.embeddings.create(
+        model="text-embedding-3-small",  # cheaper model, 1536 dims
+        input=text
+    )
+    return emb.data[0].embedding
+
+def send_chunks_to_qdrant(chunks, file_id):
+    """
+    Each chunk gets embedded and inserted into Qdrant
+    """
+    points = []
+    for chunk in chunks:
+        vector = embed_text(chunk["text"])
+        points.append(models.PointStruct(
+            id=str(uuid.uuid4()),  
+            vector=vector,
+            payload={
+                "file_id": file_id,
+                "chunk_id": chunk["id"],
+                "section": chunk["section"],
+                "text": chunk["text"]
+            }
+        ))
+
+    qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
 
 def test_qdrant():
     # Check if Qdrant is alive
-    info = qdrant_client.get_collections()
+    info = qdrant.get_collections()
     print("Qdrant collections:", info)
 
 # LangChain placeholder
@@ -72,6 +153,21 @@ def load_documents(folder_path="documents"):
 
     return docs
 
+def process_and_store_resume(resume_text: str, file_id: str):
+    # Step 1: extract graph relationships
+    rels = extract_graph_from_resume(resume_text, file_id)
+
+    # Step 2: load relationships into Neo4j
+    load_relationships_to_neo4j(rels)
+
+    # Step 3: chunk resume for Qdrant storage
+    chunks = chunk_resume_text(resume_text, file_id)
+    create_qdrant_collection()
+    send_chunks_to_qdrant(chunks, file_id)
+
+    return {"relationships": rels, "chunks": chunks}
+
+
 def main():
     st.set_page_config(layout="wide")
     st.title("Test GPT")
@@ -105,9 +201,19 @@ def main():
 
                 for doc in docs: 
                     st.write(f"Processing: {doc['filename']}")
+
+                    result = process_and_store_resume(doc['text'], file_id='1')
+
+                    print("Extracted Relationships:")
+                    for r in result["relationships"]:
+                        print(r)
+
+                    print("\nStored Chunks in Qdrant:")
+                    for c in result["chunks"]:
+                        print(c)
         
-                    graph = openai_llm_parser(doc["text"])
-                    st.write(graph)
+                    # cypher = relationships_to_cypher(rels)
+                    # st.write("\n".join(cypher))
 
 
 
