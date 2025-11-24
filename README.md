@@ -4,12 +4,21 @@ This application provides a web interface for crawling and exploring content fro
 
 ## Features
 
+<<<<<<< HEAD
 ### Wiki Crawler
 - Crawls internal wiki pages starting from a root URL
 - Extracts headings, metadata, and content
 - Handles authentication via cookies
 - Configurable crawl depth and page limits
 - Preview page content directly in the UI
+=======
+# GraphRAG
+Builds knowledge graphs to capture entities and their relationships. This allows for the ability to answer complex queries, as there is a deeper understanding of context.
+## Vector Database: 
+Uses Qdrant to persist and store unique IDs, relationships, and embeddings, for similarity-based retrieval. 
+## Graph Database:
+ Uses Neo4j to create the graph structure and relationships of the retrieved data. 
+>>>>>>> a698d98b6aa382c3bd59a1234f585be97e639505
 
 ### SharePoint Document Library Crawler
 - Access SharePoint document libraries via Microsoft Graph API

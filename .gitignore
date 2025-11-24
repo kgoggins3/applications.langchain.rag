@@ -1,0 +1,10 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Docker
+.env
+
+# Neo4j / Qdrant data (optional if you don't want to commit)
+data/
