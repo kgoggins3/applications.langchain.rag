@@ -8,3 +8,4 @@ __pycache__/
 
 # Neo4j / Qdrant data (optional if you don't want to commit)
 data/
+logs/

@@ -3,8 +3,11 @@ import os
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from typing import Any, Dict, List, Optional
+from dotenv import load_dotenv
 
 from openai import OpenAI
+
+load_dotenv()
 
 DOCUMENTS = [
     "Ragas are melodic frameworks in Indian classical music.",
