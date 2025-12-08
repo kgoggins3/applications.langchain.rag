@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_115648_9358",
+  "timestamp": "2025-12-08T11:57:33.196756",
+  "query": "What products does Intel Corporation manufacture and sell?",
+  "result": {
+    "answer": "Intel Corporation manufactures and sells a wide range of products related to computing and technology. These include:\n\n1. **Central Processing Units (CPUs):** Intel produces CPUs for personal computers, servers, and mobile devices, known for their flagship Core i3, i5, i7, i9, and Ultra processors.\n\n2. **Semiconductor Chips:** Intel is one of the largest global semiconductor manufacturers.\n\n3. **Chipsets:** These are integrated circuits that manage data flow between the processor, memory, and peripherals.\n\n4. **Graphics Processing Units (GPUs):** Intel Arc GPUs are designed for gamers and general-purpose use.\n\n5. **Network Interface Controllers:** These components manage computer communications over networks.\n\n6. **Flash Memory:** Intel manufactures flash memory for various devices.\n\n7. **Field-Programmable Gate Arrays (FPGAs):** Intel produces customizable chips for specific computing needs.\n\n8. **Solid-State Drives (SSDs):** Intel offers SSD storage solutions, including its Optane SSDs based on 3D XPoint technology (now discontinued).\n\n9. **AI Chips:** Intel has developed AI-focused chips such as Gaudi3 for generative AI and the Xeon 6 processor for data centers.\n\n10. **Self-Driving Car Technology:** Through its acquisition of Mobileye, Intel is involved in autonomous vehicle technology.\n\n11. **Other Peripherals and Platforms:** Intel also provides motherboards and associated components for PCs, alongside platforms like Centrino and IoT solutions.\n\nIntel has a broad presence in both consumer and enterprise markets, and it continues to evolve its product portfolio to adapt to technological advancements and market demands.",
+    "run_id": "20251208_115648_9358"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_115648_9358",
+        "question": "What products does Intel Corporation manufacture and sell?",
+        "question_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What products does Intel Corporation manufacture and sell?",
+        "query_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          7
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What products does Intel Corporation manufacture and sell?",
+        "query_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          7
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What products does Intel Corporation manufacture and sell?",
+        "prompt_length": 255323,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 1650,
+        "usage": {
+          "completion_tokens": 331,
+          "prompt_tokens": 72053,
+          "total_tokens": 72384,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_115648_9358",
+        "success": true,
+        "response_length": 1650,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

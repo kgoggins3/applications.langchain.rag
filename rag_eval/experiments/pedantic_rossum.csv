@@ -1,0 +1,72 @@
+question,grading_notes,response,score,log_file
+Where is Kyaa R Goggins currently studying?,Kennesaw State University,"Kyaa R Goggins is currently studying at **Kennesaw State University**, pursuing a Bachelor of Science in Software Engineering with a minor in Mathematics. Expected graduation is December 2025.",pass,logs\rag_run_20251203_162316_9391_2025-12-03T16-23-17-554259.json
+What is Kyaa R. Goggins' GPA?,3.93,Kyaa R. Goggins' GPA is 3.93.,pass,logs\rag_run_20251203_162319_0991_2025-12-03T16-23-20-594925.json
+What minor is Kyaa R Goggins pursuing alongside her major?,Mathematics,Kyaa R Goggins is pursuing a minor in Mathematics alongside her major in Software Engineering.,pass,logs\rag_run_20251203_162322_7896_2025-12-03T16-23-23-509204.json
+What tools and technologies does Kyaa R. Goggins have experience with?,"REST APIs, Git, MVC, SQL (MySQL, MariaDB), Redux, Next.js, ASP.NET, developer tools, rapid prototyping","Kyaa R. Goggins has experience with the following tools and technologies:
+
+### **Programming Languages:**
+- Javascript (React, Node.js)  
+- Typescript  
+- C#  
+- Python  
+- PHP  
+- Java  
+- HTML/CSS  
+
+### **Technologies & Tools:**
+- REST APIs  
+- Git  
+- MVC  
+- SQL (MySQL, MariaDB)  
+- Redux  
+- Next.js  
+- ASP.NET  
+- Material UI  
+- Developer tools  
+- Rapid prototyping  
+- Proxmox  
+- Node-RED  
+- MQTT brokers  
+- OpenVINO  
+
+### **Other Technical Experience:**
+- LangChain  
+- Large Language Models (LLMs)  
+- Retrieval-Augmented Generation (RAG)  
+- Supervised learning  
+- Vector-based retrieval  
+- Linux/Bash scripts for automation, networking, and container setup  
+
+These skills and technologies are backed by work experience in roles such as student assistant web developer, software engineering intern, and corporate IT intern with hands-on contributions to various impactful projects.",pass,logs\rag_run_20251203_162325_0204_2025-12-03T16-23-27-584546.json
+Which company has Kyaa R Goggins worked for as a Software Engineering Intern?,Intel,Kyaa R Goggins has worked as a Software Engineering Intern at **Intel** and **Republic National Distributing Company**.,pass,logs\rag_run_20251203_162329_6777_2025-12-03T16-23-30-486239.json
+Which programming languages does Kyaa R. Goggins know?,"Javascript, Typescript, C#, Python, HTML/CSS, PHP, Java","Kyaa R. Goggins knows the following programming languages:
+
+- JavaScript (including React and Node.js)
+- TypeScript
+- C#
+- Python
+- HTML/CSS
+- PHP
+- Java",pass,logs\rag_run_20251203_162332_7570_2025-12-03T16-23-33-405601.json
+What is Kyaa R Goggins' expected graduation date?,December 2025,Kyaa R Goggins' expected graduation date is **December 2025**.,pass,logs\rag_run_20251203_162335_6794_2025-12-03T16-23-35-946525.json
+Where did Kyaa R. Goggins work as a Software Engineering Intern?,Intel,"Kyaa R. Goggins worked as a Software Engineering Intern at Intel from May to August in 2024 and 2025 in Atlanta, GA.",pass,logs\rag_run_20251203_162337_1046_2025-12-03T16-23-38-863249.json
+What nonprofit organization is the 'Fetch My Story' project associated with?,Angels Among Us Pet Rescue,The 'Fetch My Story' project is associated with the nonprofit organization **Angels Among Us Pet Rescue**.,pass,logs\rag_run_20251203_162340_3798_2025-12-03T16-23-41-666754.json
+What field is Kyaa R Goggins pursuing a Bachelor of Science degree in?,Software Engineering,Kyaa R Goggins is pursuing a Bachelor of Science degree in Software Engineering.,pass,logs\rag_run_20251203_162343_7923_2025-12-03T16-23-44-402219.json
+What tool did Kyaa R. Goggins use for the UI in the 'Fetch My Story' project?,Material UI,"Kyaa R. Goggins used **Material UI**, **HTML/CSS**, and **React** for the UI in the ""Fetch My Story"" project.",pass,logs\rag_run_20251203_162346_9301_2025-12-03T16-23-47-781810.json
+What project did Kyaa R Goggins work on for Angels Among Us Pet Rescue?,"Fetch My Story, a foster communication and pet bio generation application.","Kyaa R Goggins worked on the ""Fetch My Story"" project for Angels Among Us Pet Rescue. The project involved creating a foster communication and pet bio generation application. Kyaa built a React-based tool that used voice-to-text AI and sentiment analysis to generate bios for the nonprofit. Kyaa led the frontend UI development, focusing on delivering a responsive, accessible, and user-friendly experience using Material UI, HTML/CSS, and React. The project combined AI, empathy, and usability to transform scattered foster notes into strong, adoption-ready stories.",pass,logs\rag_run_20251203_162349_2952_2025-12-03T16-23-51-027508.json
+What was Kyaa R. Goggins' role at Georgia Tech Research Institute?,Student Assistant – Web Development,"Kyaa R. Goggins' role at Georgia Tech Research Institute was as a **Student Assistant – Web Development**, starting in August 2023. In this role, they worked as a core developer on a lab-wide procurement system for GTRI’s ELSYS division, delivered full-stack features, designed and implemented database workflows and user-facing interfaces, and built a real-time ticketing dashboard to boost transparency and support product teams.",pass,logs\rag_run_20251203_162352_8076_2025-12-03T16-23-54-263315.json
+What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?,"Material UI, HTML/CSS, React, and voice-to-text AI","In the 'Fetch My Story' project, Kyaa R Goggins used the following technologies:
+
+- **React**: To build the core tool for the application.
+- **Material UI**: For creating a responsive and accessible frontend UI.
+- **HTML/CSS**: For further customizing the user interface and styling.
+- **Voice-to-text AI**: For converting foster notes into text.
+- **Sentiment analysis AI**: To enhance the generation of adoption-ready pet bios.
+
+The project combined these technologies to create a user-friendly tool for generating pet bios with a focus on AI, empathy, and usability.",pass,logs\rag_run_20251203_162356_6185_2025-12-03T16-23-58-831052.json
+What is Kyaa R Goggins' GPA?,3.93,Kyaa R Goggins' GPA is 3.93.,pass,logs\rag_run_20251203_162400_1244_2025-12-03T16-24-01-547189.json
+Where can Kyaa R. Goggins' portfolio be viewed?,https://kyaagoggins.github.io/react-portfolio/,Kyaa R. Goggins' portfolio can be viewed at [https://kyaagoggins.github.io/react-portfolio/](https://kyaagoggins.github.io/react-portfolio/).,pass,logs\rag_run_20251203_162403_5419_2025-12-03T16-24-04-481180.json
+What is Kyaa R. Goggins' graduation date?,December 2025,Kyaa R. Goggins' expected graduation date is **December 2025**.,pass,logs\rag_run_20251203_162406_2216_2025-12-03T16-24-08-907084.json
+Which programming languages does Kyaa R Goggins know?,"Javascript (React, Node.js), Typescript, C#, Python, HTML/CSS, PHP, Java","Kyaa R Goggins knows the following programming languages: JavaScript (React, Node.js), TypeScript, C#, Python, HTML/CSS, PHP, and Java.",pass,logs\rag_run_20251203_162410_7294_2025-12-03T16-24-11-787112.json
+What internship program innovation did Kyaa R Goggins contribute to at Republic National Distributing Company?,A company-wide overhaul of the internship program.,"Kyaa R. Goggins contributed to an innovation at Republic National Distributing Company by developing ideas for an intern capstone project, which led to a company-wide overhaul of the internship program.",pass,logs\rag_run_20251203_162413_6711_2025-12-03T16-24-14-598223.json
+Which university is Kyaa R. Goggins attending?,Kennesaw State University,Kyaa R. Goggins is attending **Kennesaw State University**.,pass,logs\rag_run_20251203_162416_0848_2025-12-03T16-24-16-970436.json

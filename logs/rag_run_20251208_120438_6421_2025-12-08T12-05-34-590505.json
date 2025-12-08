@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_120438_6421",
+  "timestamp": "2025-12-08T12:05:34.590505",
+  "query": "What changes were made to Intel's branding in 2020?",
+  "result": {
+    "answer": "In 2020, Intel made significant changes to its branding, highlighted by the introduction of a new logo. The redesigned logo retained elements of its past designs, including inspiration from the original 1969 logo and the 2006 \"Intel Inside\" swirl logo. The 2020 logo featured a simplified, refined structure with squared-off corners on the letters \"I\" and \"L\" to convey reliability and endurance. The \"dot\" on the \"I\" became a focal point, symbolizing the power and potential of Intel processors. The updated branding aimed to present Intel as a blend of tradition and modern reliability for the future.",
+    "run_id": "20251208_120438_6421"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_120438_6421",
+        "question": "What changes were made to Intel's branding in 2020?",
+        "question_length": 51,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What changes were made to Intel's branding in 2020?",
+        "query_length": 51,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          7
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What changes were made to Intel's branding in 2020?",
+        "query_length": 51,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          7
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What changes were made to Intel's branding in 2020?",
+        "prompt_length": 255316,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 603,
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 72057,
+          "total_tokens": 72185,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_120438_6421",
+        "success": true,
+        "response_length": 603,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

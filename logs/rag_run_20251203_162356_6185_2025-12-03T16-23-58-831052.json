@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162356_6185",
+  "timestamp": "2025-12-03T16:23:58.831052",
+  "query": "What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?",
+  "result": {
+    "answer": "In the 'Fetch My Story' project, Kyaa R Goggins used the following technologies:\n\n- **React**: To build the core tool for the application.\n- **Material UI**: For creating a responsive and accessible frontend UI.\n- **HTML/CSS**: For further customizing the user interface and styling.\n- **Voice-to-text AI**: For converting foster notes into text.\n- **Sentiment analysis AI**: To enhance the generation of adoption-ready pet bios.\n\nThe project combined these technologies to create a user-friendly tool for generating pet bios with a focus on AI, empathy, and usability.",
+    "run_id": "20251203_162356_6185"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162356_6185",
+        "question": "What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?",
+        "question_length": 73,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?",
+        "query_length": 73,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          7,
+          7
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?",
+        "query_length": 73,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          7,
+          7
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What technologies did Kyaa R Goggins use in the 'Fetch My Story' project?",
+        "prompt_length": 7083,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 569,
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 1646,
+          "total_tokens": 1771,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162356_6185",
+        "success": true,
+        "response_length": 569,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

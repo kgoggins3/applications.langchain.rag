@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_112453_3679",
+  "timestamp": "2025-12-08T11:25:59.529153",
+  "query": "What is Intel Corporation?",
+  "result": {
+    "answer": "Intel Corporation is an American multinational technology company headquartered in Santa Clara, California. It specializes in designing, manufacturing, and selling computer components such as central processing units (CPUs), as well as graphics processing units (GPUs), flash memory, network controllers, and other computing-related products. Established in 1968 by semiconductor pioneers Gordon Moore and Robert Noyce, Intel played a key role in the development of microprocessors and the rise of Silicon Valley as a major tech hub. The company is known for its long-standing leadership in semiconductor innovation and its influence in the PC industry, especially through its x86 processor architecture, which powers most personal computers.\n\nIntel has a significant presence in various markets, including high-performance consumer computing, artificial intelligence, data centers, and autonomous driving technologies. It is also recognized for its branding campaigns such as Intel Inside and its corporate identity symbolized by its iconic logo and jingle. Despite facing increasing competition from companies like AMD and challenges in manufacturing advancements, Intel remains one of the leading names in the technology and semiconductor industries.",
+    "run_id": "20251208_112453_3679"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112453_3679",
+        "question": "What is Intel Corporation?",
+        "question_length": 26,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel Corporation?",
+        "query_length": 26,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          3
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel Corporation?",
+        "query_length": 26,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          3
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is Intel Corporation?",
+        "prompt_length": 255291,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 1253,
+        "usage": {
+          "completion_tokens": 211,
+          "prompt_tokens": 72049,
+          "total_tokens": 72260,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112453_3679",
+        "success": true,
+        "response_length": 1253,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

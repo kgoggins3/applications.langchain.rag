@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_141032_1521",
+  "timestamp": "2025-12-04T14:11:35.266252",
+  "query": "What is Intel's 'IDM 2.0' strategy?",
+  "result": {
+    "answer": "Intel's \"IDM 2.0\" strategy, introduced by CEO Pat Gelsinger on March 23, 2021, is a comprehensive plan to revitalize Intel's operations and strengthen its position in the global semiconductor industry. The strategy includes several key components:\n\n1. **Manufacturing Investments**: Significant investments in new manufacturing facilities, including a $20 billion allocation for two fabs in Arizona, aimed at bolstering Intel's internal manufacturing capabilities.\n\n2. **Internal and External Foundries**: A hybrid approach combining the use of Intel's own foundries as well as collaborating with external foundries to meet production demands and enhance flexibility.\n\n3. **Intel Foundry Services (IFS)**: Establishment of a new standalone business unit dedicated to offering foundry services. IFS will provide a mix of Intel's packaging, process technologies, and intellectual property (IP), including x86 cores, to external clients. This marks a shift towards allowing other companies, potentially even competitors, to utilize Intel's manufacturing expertise.\n\n4. **IBM Partnership**: Collaboration with IBM on advanced semiconductor research and innovation to accelerate technological advancements.\n\n5. **Developer Engagement**: Introduction of a new event for developers and engineers called \"Intel ON,\" aimed at fostering innovation and engagement within the technology ecosystem.\n\n6. **7nm Process Development**: Confirmation of progress on Intel's 7nm process technology (Intel 4), with future products like Ponte Vecchio and Meteor Lake planned based on this node.\n\n7. **Global Expansion**: Plans for expansions in countries like Germany (Magdeburg mega fab project) and Ohio (new $20 billion facility) and strategic partnerships for factory funding, such as the $30 billion collaboration with Brookfield Asset Management.\n\nOverall, IDM 2.0 signifies Intel's efforts to regain technological leadership, embrace opportunities in its manufacturing strengths, and compete effectively with rivals like TSMC and AMD.",
+    "run_id": "20251204_141032_1521"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_141032_1521",
+        "question": "What is Intel's 'IDM 2.0' strategy?",
+        "question_length": 35,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel's 'IDM 2.0' strategy?",
+        "query_length": 35,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel's 'IDM 2.0' strategy?",
+        "query_length": 35,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is Intel's 'IDM 2.0' strategy?",
+        "prompt_length": 255300,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 2019,
+        "usage": {
+          "completion_tokens": 387,
+          "prompt_tokens": 72058,
+          "total_tokens": 72445,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_141032_1521",
+        "success": true,
+        "response_length": 2019,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

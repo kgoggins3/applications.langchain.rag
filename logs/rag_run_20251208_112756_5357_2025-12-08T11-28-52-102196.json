@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_112756_5357",
+  "timestamp": "2025-12-08T11:28:52.102196",
+  "query": "Who are the founders of Intel?",
+  "result": {
+    "answer": "Intel was founded on July 18, 1968, by semiconductor pioneers **Gordon Moore** and **Robert Noyce**, along with investor and venture capitalist **Arthur Rock**.",
+    "run_id": "20251208_112756_5357"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112756_5357",
+        "question": "Who are the founders of Intel?",
+        "question_length": 30,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Who are the founders of Intel?",
+        "query_length": 30,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Who are the founders of Intel?",
+        "query_length": 30,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "Who are the founders of Intel?",
+        "prompt_length": 255295,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 160,
+        "usage": {
+          "completion_tokens": 39,
+          "prompt_tokens": 72051,
+          "total_tokens": 72090,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112756_5357",
+        "success": true,
+        "response_length": 160,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

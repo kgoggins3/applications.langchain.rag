@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162332_7570",
+  "timestamp": "2025-12-03T16:23:33.405601",
+  "query": "Which programming languages does Kyaa R. Goggins know?",
+  "result": {
+    "answer": "Kyaa R. Goggins knows the following programming languages:\n\n- JavaScript (including React and Node.js)\n- TypeScript\n- C#\n- Python\n- HTML/CSS\n- PHP\n- Java",
+    "run_id": "20251203_162332_7570"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162332_7570",
+        "question": "Which programming languages does Kyaa R. Goggins know?",
+        "question_length": 54,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which programming languages does Kyaa R. Goggins know?",
+        "query_length": 54,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          3,
+          3
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which programming languages does Kyaa R. Goggins know?",
+        "query_length": 54,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          3,
+          3
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "Which programming languages does Kyaa R. Goggins know?",
+        "prompt_length": 7064,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 153,
+        "usage": {
+          "completion_tokens": 44,
+          "prompt_tokens": 1640,
+          "total_tokens": 1684,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162332_7570",
+        "success": true,
+        "response_length": 153,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

@@ -66,7 +66,7 @@ def openai_qa_parser(text: str, prompt = '') -> dict:
                 "role": "system",
                 "content": 
                     f"""You are an AI that generates 10 total clear question/answer pairs 
-                    based on the given text. Keep these q/a pairs informative and relevant and in order.
+                    based on the given text. 
                     {prompt}
                     For each meaningful piece of information 
                     in the text, create one question and its answer. 
@@ -156,7 +156,7 @@ def main():
 
     qa_type_prompt = st.sidebar.selectbox(
         "Select Q/A Type",
-        ["Default","Factoid", "Multiple Choice", "True/False", "Custom"]
+        ["Default", "Factoid", "How-to", "Definition", "Extraction", "Unanswerable", "Multi-Doc", "Custom"]
     )
 
     if qa_type_prompt == "Custom":
@@ -165,6 +165,18 @@ def main():
             value="Generate Q/A pairs based on the content",
             height=150
         )
+    elif qa_type_prompt == "Factoid":
+        qa_type_prompt_text = "Generate factoid Q/A pairs from the content. The questions should focus on short factual questions (Who, What, When, Where)."
+    elif qa_type_prompt == "How-to":
+        qa_type_prompt_text = "Generate how-to and procedural Q/A pairs from the content. The answers to the questions should be Step-based answers (deployment steps, procedures). "
+    elif qa_type_prompt == "Definition":
+        qa_type_prompt_text = "Generate definition and conceptual Q/A pairs from the content. The questions should focus on defining terms and explaining concepts or policies"
+    elif qa_type_prompt == "Extraction":
+        qa_type_prompt_text = "Generate extraction Q/A pairs from the content. The questions should focus on extracting specific information or data points from the content and give evidence based answers. (needle in a haystack)"
+    elif qa_type_prompt == "Unanswerable":
+        qa_type_prompt_text = "Generate negative and/or unanswerable Q/A pairs from the content. The questions returned should not be answerable from the content provided and the answers should reflect that gap for hallucination control."
+    elif qa_type_prompt == "Multi-Doc":
+        qa_type_prompt_text = "Generate multi-doc and/or comparison Q/A pairs from the content. The questions should require synthesizing information from multiple documents to answer and testing cross-document retrieval."
     else:
         qa_type_prompt_text = f"Generate {qa_type_prompt} Q/A pairs from the content."
 

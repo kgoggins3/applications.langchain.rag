@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_120232_1691",
+  "timestamp": "2025-12-08T12:03:36.032674",
+  "query": "Which government owns a stake in Intel, and how much?",
+  "result": {
+    "answer": "The United States government owns a 9.9% non-voting equity stake in Intel as of 2025.",
+    "run_id": "20251208_120232_1691"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_120232_1691",
+        "question": "Which government owns a stake in Intel, and how much?",
+        "question_length": 53,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which government owns a stake in Intel, and how much?",
+        "query_length": 53,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          9
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which government owns a stake in Intel, and how much?",
+        "query_length": 53,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          9
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "Which government owns a stake in Intel, and how much?",
+        "prompt_length": 255318,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 85,
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 72056,
+          "total_tokens": 72081,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_120232_1691",
+        "success": true,
+        "response_length": 85,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

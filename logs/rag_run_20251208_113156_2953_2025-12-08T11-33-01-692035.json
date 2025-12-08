@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_113156_2953",
+  "timestamp": "2025-12-08T11:33:01.692035",
+  "query": "What is Intel's connection to Nasdaq?",
+  "result": {
+    "answer": "Intel has a historical and ongoing connection with the Nasdaq stock exchange. It was one of the first companies\u2014and remains the oldest\u2014to be listed on the then-newly established National Association of Securities Dealers Automated Quotation System (NASDAQ). Today, Intel's stock is publicly traded under the ticker symbol **INTC** on the Nasdaq, and it is a component of major indices like the Nasdaq-100, S&P 500, and S&P 100.",
+    "run_id": "20251208_113156_2953"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_113156_2953",
+        "question": "What is Intel's connection to Nasdaq?",
+        "question_length": 37,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel's connection to Nasdaq?",
+        "query_length": 37,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Intel's connection to Nasdaq?",
+        "query_length": 37,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          5
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is Intel's connection to Nasdaq?",
+        "prompt_length": 255302,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 427,
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 72052,
+          "total_tokens": 72143,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_113156_2953",
+        "success": true,
+        "response_length": 427,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

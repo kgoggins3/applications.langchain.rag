@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_132037_0968",
+  "timestamp": "2025-12-04T13:20:39.016036",
+  "query": "What is Kyaa's GPA and academic achievements?",
+  "result": {
+    "answer": "Kyaa's GPA is **3.93**. Their academic achievements include being on the **President\u2019s List** in Spring 2022, Fall 2022, Spring 2023, Summer 2023, Spring 2024, and Spring 2025, as well as the **Dean\u2019s List** in Fall 2021 and Fall 2024. Additionally, Kyaa is an **Honors Scholar**.",
+    "run_id": "20251204_132037_0968"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_132037_0968",
+        "question": "What is Kyaa's GPA and academic achievements?",
+        "question_length": 45,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Kyaa's GPA and academic achievements?",
+        "query_length": 45,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          1
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Kyaa's GPA and academic achievements?",
+        "query_length": 45,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          1
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is Kyaa's GPA and academic achievements?",
+        "prompt_length": 3674,
+        "context_length": 3379,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 280,
+        "usage": {
+          "completion_tokens": 88,
+          "prompt_tokens": 853,
+          "total_tokens": 941,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_132037_0968",
+        "success": true,
+        "response_length": 280,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

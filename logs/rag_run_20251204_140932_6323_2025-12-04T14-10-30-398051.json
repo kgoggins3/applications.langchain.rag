@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_140932_6323",
+  "timestamp": "2025-12-04T14:10:30.398051",
+  "query": "What was Intel's first commercial microprocessor, and when was it released?",
+  "result": {
+    "answer": "Intel's first commercial microprocessor, the **Intel 4004**, was introduced on **November 15, 1971**.",
+    "run_id": "20251204_140932_6323"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_140932_6323",
+        "question": "What was Intel's first commercial microprocessor, and when was it released?",
+        "question_length": 75,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Intel's first commercial microprocessor, and when was it released?",
+        "query_length": 75,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          10
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Intel's first commercial microprocessor, and when was it released?",
+        "query_length": 75,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          10
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What was Intel's first commercial microprocessor, and when was it released?",
+        "prompt_length": 255340,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 101,
+        "usage": {
+          "completion_tokens": 28,
+          "prompt_tokens": 72059,
+          "total_tokens": 72087,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_140932_6323",
+        "success": true,
+        "response_length": 101,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

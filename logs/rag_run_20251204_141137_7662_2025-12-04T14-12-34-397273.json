@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_141137_7662",
+  "timestamp": "2025-12-04T14:12:34.397273",
+  "query": "How has the U.S. government engaged with Intel as of 2025?",
+  "result": {
+    "answer": "As of 2025, the U.S. government has taken significant steps to engage with Intel:\n\n1. **Equity Stake in Intel**: In August 2025, the United States government purchased a 9.9% equity stake in Intel, involving 433.3 million shares at $20.47 per share. This investment was structured as a passive ownership with no voting rights or board representation. The deal also included a five-year warrant allowing the government to purchase up to an additional 5% stake under certain conditions. This stake aimed to support and enhance domestic semiconductor manufacturing, emphasizing technology and manufacturing leadership in line with U.S. strategic priorities.\n\n2. **CHIPS Act Funding**: The equity acquisition aligns with previously allocated CHIPS Act funding from the Biden administration. This legislation is designed to bolster the U.S. semiconductor industry amidst global competition and reliance on foreign chip production.\n\n3. **Partnership in Semiconductor Production**: Intel has worked on projects with the Department of Defense, receiving grants up to $3.5 billion to produce semiconductors for defense purposes. This collaboration highlights Intel's role in ensuring a secure and strategic supply of critical technologies for national defense.\n\nThese actions reflect a robust partnership between Intel and the U.S. government aimed at fortifying the domestic semiconductor supply chain and enhancing the nation's technological capabilities.",
+    "run_id": "20251204_141137_7662"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_141137_7662",
+        "question": "How has the U.S. government engaged with Intel as of 2025?",
+        "question_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "How has the U.S. government engaged with Intel as of 2025?",
+        "query_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          10
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "How has the U.S. government engaged with Intel as of 2025?",
+        "query_length": 58,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          10
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "How has the U.S. government engaged with Intel as of 2025?",
+        "prompt_length": 255323,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 1448,
+        "usage": {
+          "completion_tokens": 270,
+          "prompt_tokens": 72060,
+          "total_tokens": 72330,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_141137_7662",
+        "success": true,
+        "response_length": 1448,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

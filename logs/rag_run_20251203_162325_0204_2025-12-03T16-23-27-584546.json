@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162325_0204",
+  "timestamp": "2025-12-03T16:23:27.584546",
+  "query": "What tools and technologies does Kyaa R. Goggins have experience with?",
+  "result": {
+    "answer": "Kyaa R. Goggins has experience with the following tools and technologies:\n\n### **Programming Languages:**\n- Javascript (React, Node.js)  \n- Typescript  \n- C#  \n- Python  \n- PHP  \n- Java  \n- HTML/CSS  \n\n### **Technologies & Tools:**\n- REST APIs  \n- Git  \n- MVC  \n- SQL (MySQL, MariaDB)  \n- Redux  \n- Next.js  \n- ASP.NET  \n- Material UI  \n- Developer tools  \n- Rapid prototyping  \n- Proxmox  \n- Node-RED  \n- MQTT brokers  \n- OpenVINO  \n\n### **Other Technical Experience:**\n- LangChain  \n- Large Language Models (LLMs)  \n- Retrieval-Augmented Generation (RAG)  \n- Supervised learning  \n- Vector-based retrieval  \n- Linux/Bash scripts for automation, networking, and container setup  \n\nThese skills and technologies are backed by work experience in roles such as student assistant web developer, software engineering intern, and corporate IT intern with hands-on contributions to various impactful projects.",
+    "run_id": "20251203_162325_0204"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162325_0204",
+        "question": "What tools and technologies does Kyaa R. Goggins have experience with?",
+        "question_length": 70,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What tools and technologies does Kyaa R. Goggins have experience with?",
+        "query_length": 70,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          6,
+          6
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What tools and technologies does Kyaa R. Goggins have experience with?",
+        "query_length": 70,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          6,
+          6
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What tools and technologies does Kyaa R. Goggins have experience with?",
+        "prompt_length": 7080,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 903,
+        "usage": {
+          "completion_tokens": 214,
+          "prompt_tokens": 1643,
+          "total_tokens": 1857,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162325_0204",
+        "success": true,
+        "response_length": 903,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

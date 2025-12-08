@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162352_8076",
+  "timestamp": "2025-12-03T16:23:54.263315",
+  "query": "What was Kyaa R. Goggins' role at Georgia Tech Research Institute?",
+  "result": {
+    "answer": "Kyaa R. Goggins' role at Georgia Tech Research Institute was as a **Student Assistant \u2013 Web Development**, starting in August 2023. In this role, they worked as a core developer on a lab-wide procurement system for GTRI\u2019s ELSYS division, delivered full-stack features, designed and implemented database workflows and user-facing interfaces, and built a real-time ticketing dashboard to boost transparency and support product teams.",
+    "run_id": "20251203_162352_8076"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162352_8076",
+        "question": "What was Kyaa R. Goggins' role at Georgia Tech Research Institute?",
+        "question_length": 66,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Kyaa R. Goggins' role at Georgia Tech Research Institute?",
+        "query_length": 66,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          4,
+          4
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Kyaa R. Goggins' role at Georgia Tech Research Institute?",
+        "query_length": 66,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          4,
+          4
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What was Kyaa R. Goggins' role at Georgia Tech Research Institute?",
+        "prompt_length": 7076,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 431,
+        "usage": {
+          "completion_tokens": 89,
+          "prompt_tokens": 1644,
+          "total_tokens": 1733,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162352_8076",
+        "success": true,
+        "response_length": 431,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

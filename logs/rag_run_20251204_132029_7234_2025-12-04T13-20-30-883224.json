@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_132029_7234",
+  "timestamp": "2025-12-04T13:20:30.883224",
+  "query": "What degree is Kyaa pursuing, and when is the expected graduation date?",
+  "result": {
+    "answer": "Kyaa is pursuing a **Bachelor of Science in Software Engineering** with a minor in Mathematics at **Kennesaw State University**. The expected graduation date is **December 2025**.",
+    "run_id": "20251204_132029_7234"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_132029_7234",
+        "question": "What degree is Kyaa pursuing, and when is the expected graduation date?",
+        "question_length": 71,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What degree is Kyaa pursuing, and when is the expected graduation date?",
+        "query_length": 71,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          4
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What degree is Kyaa pursuing, and when is the expected graduation date?",
+        "query_length": 71,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          4
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What degree is Kyaa pursuing, and when is the expected graduation date?",
+        "prompt_length": 3700,
+        "context_length": 3379,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 179,
+        "usage": {
+          "completion_tokens": 40,
+          "prompt_tokens": 858,
+          "total_tokens": 898,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_132029_7234",
+        "success": true,
+        "response_length": 179,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

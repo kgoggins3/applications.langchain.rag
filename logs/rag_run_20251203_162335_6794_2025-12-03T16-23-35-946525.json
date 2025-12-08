@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162335_6794",
+  "timestamp": "2025-12-03T16:23:35.946525",
+  "query": "What is Kyaa R Goggins' expected graduation date?",
+  "result": {
+    "answer": "Kyaa R Goggins' expected graduation date is **December 2025**.",
+    "run_id": "20251203_162335_6794"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162335_6794",
+        "question": "What is Kyaa R Goggins' expected graduation date?",
+        "question_length": 49,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Kyaa R Goggins' expected graduation date?",
+        "query_length": 49,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          3,
+          3
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is Kyaa R Goggins' expected graduation date?",
+        "query_length": 49,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          3,
+          3
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is Kyaa R Goggins' expected graduation date?",
+        "prompt_length": 7059,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 62,
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 1640,
+          "total_tokens": 1659,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162335_6794",
+        "success": true,
+        "response_length": 62,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

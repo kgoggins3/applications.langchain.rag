@@ -1,0 +1,119 @@
+{
+  "run_id": "20251203_162553_5812",
+  "timestamp": "2025-12-03T16:25:54.056810",
+  "query": "What certifications does Kyaa R. Goggins hold in software development?",
+  "result": {
+    "answer": "The documents provided do not mention any specific certifications that Kyaa R. Goggins holds in software development.",
+    "run_id": "20251203_162553_5812"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162553_5812",
+        "question": "What certifications does Kyaa R. Goggins hold in software development?",
+        "question_length": 70,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What certifications does Kyaa R. Goggins hold in software development?",
+        "query_length": 70,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          4
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What certifications does Kyaa R. Goggins hold in software development?",
+        "query_length": 70,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          4
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What certifications does Kyaa R. Goggins hold in software development?",
+        "prompt_length": 3699,
+        "context_length": 3379,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 117,
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 858,
+          "total_tokens": 881,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162553_5812",
+        "success": true,
+        "response_length": 117,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

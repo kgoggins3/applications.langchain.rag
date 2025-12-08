@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162337_1046",
+  "timestamp": "2025-12-03T16:23:38.863249",
+  "query": "Where did Kyaa R. Goggins work as a Software Engineering Intern?",
+  "result": {
+    "answer": "Kyaa R. Goggins worked as a Software Engineering Intern at Intel from May to August in 2024 and 2025 in Atlanta, GA.",
+    "run_id": "20251203_162337_1046"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162337_1046",
+        "question": "Where did Kyaa R. Goggins work as a Software Engineering Intern?",
+        "question_length": 64,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Where did Kyaa R. Goggins work as a Software Engineering Intern?",
+        "query_length": 64,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          6,
+          6
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Where did Kyaa R. Goggins work as a Software Engineering Intern?",
+        "query_length": 64,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          6,
+          6
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "Where did Kyaa R. Goggins work as a Software Engineering Intern?",
+        "prompt_length": 7074,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 116,
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 1643,
+          "total_tokens": 1676,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162337_1046",
+        "success": true,
+        "response_length": 116,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

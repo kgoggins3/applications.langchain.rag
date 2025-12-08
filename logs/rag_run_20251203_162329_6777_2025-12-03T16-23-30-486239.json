@@ -1,0 +1,123 @@
+{
+  "run_id": "20251203_162329_6777",
+  "timestamp": "2025-12-03T16:23:30.486239",
+  "query": "Which company has Kyaa R Goggins worked for as a Software Engineering Intern?",
+  "result": {
+    "answer": "Kyaa R Goggins has worked as a Software Engineering Intern at **Intel** and **Republic National Distributing Company**.",
+    "run_id": "20251203_162329_6777"
+  },
+  "num_documents": 2,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162329_6777",
+        "question": "Which company has Kyaa R Goggins worked for as a Software Engineering Intern?",
+        "question_length": 77,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which company has Kyaa R Goggins worked for as a Software Engineering Intern?",
+        "query_length": 77,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          9,
+          9
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "Which company has Kyaa R Goggins worked for as a Software Engineering Intern?",
+        "query_length": 77,
+        "top_k": 3,
+        "total_documents": 2
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 2,
+        "scores": [
+          9,
+          9
+        ],
+        "document_ids": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "Which company has Kyaa R Goggins worked for as a Software Engineering Intern?",
+        "prompt_length": 7087,
+        "context_length": 6760,
+        "num_context_docs": 2
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 119,
+        "usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 1644,
+          "total_tokens": 1671,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251203_162329_6777",
+        "success": true,
+        "response_length": 119,
+        "num_retrieved": 2
+      }
+    }
+  ]
+}

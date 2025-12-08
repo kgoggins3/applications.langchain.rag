@@ -1,0 +1,56 @@
+question,grading_notes,response,score,log_file
+"What degree is Kyaa pursuing, and when is the expected graduation date?","Bachelor of Science in Software Engineering with a minor in Mathematics, expected graduation in December 2025.",Kyaa is pursuing a **Bachelor of Science in Software Engineering** with a minor in Mathematics at **Kennesaw State University**. The expected graduation date is **December 2025**.,pass,logs\rag_run_20251204_132029_7234_2025-12-04T13-20-30-883224.json
+Describe one notable project that Kyaa worked on.,"Kyaa worked on 'Fetch My Story,' a React-based tool for a pet rescue nonprofit. The tool uses voice-to-text AI and sentiment analysis to generate bios for pets, improving foster communication and adoption processes.","One notable project that Kyaa worked on is **Fetch My Story**, a Foster Communication and Pet Bio Generation application built for the nonprofit organization Angels Among Us Pet Rescue. This tool utilized voice-to-text AI and sentiment analysis to generate bios for foster pets, making them adoption-ready. Kyaa led the frontend UI development, delivering a responsive, accessible, and user-friendly experience using React, Material UI, and HTML/CSS. The project successfully combined AI, empathy, and usability to turn scattered foster notes into strong, adoption-ready narratives.",pass,logs\rag_run_20251204_132033_6702_2025-12-04T13-20-34-478713.json
+What is Kyaa's GPA and academic achievements?,Kyaa has a GPA of 3.93 and has been on the President’s List for multiple terms and the Dean’s List in Fall 2021 and Fall 2024. Kyaa is also an Honors Scholar.,"Kyaa's GPA is **3.93**. Their academic achievements include being on the **President’s List** in Spring 2022, Fall 2022, Spring 2023, Summer 2023, Spring 2024, and Spring 2025, as well as the **Dean’s List** in Fall 2021 and Fall 2024. Additionally, Kyaa is an **Honors Scholar**.",pass,logs\rag_run_20251204_132037_0968_2025-12-04T13-20-39-016036.json
+What programming languages does Kyaa know?,"Kyaa knows JavaScript (React, Node.js), TypeScript, C#, Python, HTML/CSS, PHP, and Java.","Kyaa knows the following programming languages: Javascript (React, Node.js), Typescript, C#, Python, HTML/CSS, PHP, and Java.",pass,logs\rag_run_20251204_132040_5213_2025-12-04T13-20-41-630890.json
+What key technologies and tools is Kyaa skilled in?,"Kyaa is skilled in technologies like REST APIs, Git, MVC, SQL (MySQL, MariaDB), Redux, Next.js, ASP.NET, and developer tools, among others.","Kyaa is skilled in the following key technologies and tools:
+
+**Programming Languages:**  
+- JavaScript (React, Node.js)  
+- TypeScript  
+- C#  
+- Python  
+- HTML/CSS  
+- PHP  
+- Java  
+
+**Technologies & Tools:**  
+- REST APIs  
+- Git  
+- MVC (Model-View-Controller)  
+- SQL (MySQL, MariaDB)  
+- Redux  
+- Next.js  
+- ASP.NET Core  
+- Developer tools  
+- Rapid prototyping  
+- Material UI  
+- Proxmox  
+- Node-RED  
+- MQTT brokers  
+- OpenVINO  
+
+Kyaa has also demonstrated hands-on experience with:  
+- LangChain, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), supervised learning, and vector-based retrieval.  
+- Linux/bash scripting for automation, networking, and container setup.",pass,logs\rag_run_20251204_132043_3158_2025-12-04T13-20-46-034688.json
+Where can Kyaa's portfolio and projects be viewed online?,Kyaa's portfolio and projects can be viewed at https://kyaagoggins.github.io/react-portfolio/.,Kyaa's portfolio and projects can be viewed online at [https://kyaagoggins.github.io/react-portfolio/](https://kyaagoggins.github.io/react-portfolio/).,pass,logs\rag_run_20251204_132049_9889_2025-12-04T13-20-50-057993.json
+What tasks did Kyaa perform as a Software Engineering Intern at Intel?,"Kyaa helped prototype and ship an internal full-stack app, led frontend development, worked on Open Edge AI apps, and built and customized VM templates for GenAI apps.","As a Software Engineering Intern at Intel, Kyaa performed the following tasks:
+
+1. **Prototyped and shipped an internal full-stack application** that automated virtual machine (VM), server, and network setup, reducing provisioning time from a week to just hours. This involved using technologies like React, TypeScript, ASP.NET Core 8, Carbon UI, and MVC.
+
+2. **Led frontend development** while working across the stack to implement features such as filtering, pagination, and log monitoring.
+
+3. **Integrated REST APIs with backend data** using Next.js.
+
+4. Contributed to **Open Edge AI applications**, gaining hands-on experience with LangChain, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), supervised learning, and vector-based retrieval.
+
+5. Built and customized **VM templates for Generative AI apps** utilizing Proxmox, Node-RED, MQTT brokers, and OpenVINO.
+
+6. Wrote **Linux/bash scripts** for automation, networking, and container setup.",pass,logs\rag_run_20251204_132052_9508_2025-12-04T13-20-55-438270.json
+What is the name of the person described in the document?,Kyaa R Goggins,The name of the person described in the document is **Kyaa R Goggins**.,pass,logs\rag_run_20251204_132057_8363_2025-12-04T13-20-58-629725.json
+What was Kyaa's contribution during their Corporate IT Internship at Republic National Distributing Company?,"Kyaa supported warehouse management tools, created frontend components, developed backend endpoints, and innovated a company-wide overhaul of the internship program.","During their Corporate IT Internship at Republic National Distributing Company, Kyaa contributed in the following ways:
+- Supported operations of Warehouse Management Tools on full-stack development.
+- Assisted in creating backend endpoints, unit testing, developing frontend components, and presenting completed UI application demos to the company's business leaders.
+- Innovated ideas on an intern capstone project, leading to a company-wide overhaul of the internship program.
+- Acquired hands-on experience with various technologies, including APIs, React, HTML, C#, JavaScript, Redux, NodeJS, Material UI, VS Code, GitHub, MySQL databases, and MVC processes.",pass,logs\rag_run_20251204_132102_6518_2025-12-04T13-21-04-053653.json
+Where is Kyaa currently working and what role do they have?,Kyaa is working as a Student Assistant – Web Development at the Georgia Tech Research Institute.,"Kyaa is currently working as a **Student Assistant – Web Development** at **Georgia Tech Research Institute**, starting in August 2023 in Atlanta, GA.",pass,logs\rag_run_20251204_132106_2233_2025-12-04T13-21-06-720173.json

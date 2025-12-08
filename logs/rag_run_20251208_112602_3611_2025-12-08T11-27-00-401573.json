@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_112602_3611",
+  "timestamp": "2025-12-08T11:27:00.401573",
+  "query": "What is the significance of Intel's 'Intel Inside' campaign?",
+  "result": {
+    "answer": "The significance of Intel's \"Intel Inside\" campaign lies in its innovative concept of \"ingredient branding\" and its impact on Intel's role and public perception in the technology industry. Launched in 1991, the campaign aimed to shift Intel's identity from being a component supplier, which was relatively little known outside tech circles, to a household name. By creating brand loyalty among consumers, it emphasized the importance of Intel microprocessors as the \"ingredient\" that powers personal computers. Intel paid computer manufacturers and retailers to display the \"Intel Inside\" logo and promoted the brand extensively through advertising, making Intel's processors synonymous with quality and reliability.\n\nThe campaign's success established Intel's dominance in the microprocessor market, helping to make its products a standard in most consumer and business PCs. By the end of the 1990s, Intel became a trusted and recognized brand among users, while its Pentium processors became a household term due to this strategic branding and marketing effort. This approach was a key factor in Intel's growth and its prominence in the technology industry.",
+    "run_id": "20251208_112602_3611"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112602_3611",
+        "question": "What is the significance of Intel's 'Intel Inside' campaign?",
+        "question_length": 60,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is the significance of Intel's 'Intel Inside' campaign?",
+        "query_length": 60,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          6
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What is the significance of Intel's 'Intel Inside' campaign?",
+        "query_length": 60,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          6
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What is the significance of Intel's 'Intel Inside' campaign?",
+        "prompt_length": 255325,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 1159,
+        "usage": {
+          "completion_tokens": 212,
+          "prompt_tokens": 72057,
+          "total_tokens": 72269,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112602_3611",
+        "success": true,
+        "response_length": 1159,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

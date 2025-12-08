@@ -1,0 +1,119 @@
+{
+  "run_id": "20251204_140621_4473",
+  "timestamp": "2025-12-04T14:07:29.919412",
+  "query": "What major products does Intel design, manufacture, and sell?",
+  "result": {
+    "answer": "Intel designs, manufactures, and sells a wide array of computer components and technology products. Their major products include:\n\n1. **Central Processing Units (CPUs):** Intel is renowned for its processors, particularly its Intel Core line including Core i3, i5, i7, and i9 processors, which are used in consumer PCs, high-performance computing, and gaming systems.\n\n2. **Graphics Processing Units (GPUs):** Intel manufactures graphics solutions, including its Intel Arc series of GPUs for gaming and visual computing.\n\n3. **Chipsets:** These are used to manage communication between the CPU, memory, and other computer components.\n\n4. **Memory Solutions:** Intel offers flash memory and storage technologies, including SSDs (solid-state drives) and formerly Optane memory products.\n\n5. **Field-Programmable Gate Arrays (FPGAs):** Sold under the Stratix, Arria, and Cyclone brands, these programmable chips are used in applications ranging from data centers to 5G technology.\n\n6. **Network Interface Controllers:** Components for managing devices\u2019 network connections.\n\n7. **Silicon Photonics and AI Chips:** Products like Gaudi AI accelerators target machine learning and generative AI needs.\n\n8. **Self-Driving Car Solutions:** Through its acquisition of Mobileye, Intel develops technologies for autonomous vehicles.\n\n9. **Motherboards and PC Components:** In the past, Intel also manufactured and supplied motherboards and other supporting PC components.\n\n10. **Software and Platform Services:** These include technologies like the Intel vPro enterprise solutions for enhanced security and management.\n\nIntel continues to innovate across these domains, concentrating on new areas like AI, 5G, and cloud technologies.",
+    "run_id": "20251204_140621_4473"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_140621_4473",
+        "question": "What major products does Intel design, manufacture, and sell?",
+        "question_length": 61,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What major products does Intel design, manufacture, and sell?",
+        "query_length": 61,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          6
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What major products does Intel design, manufacture, and sell?",
+        "query_length": 61,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          6
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What major products does Intel design, manufacture, and sell?",
+        "prompt_length": 255326,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 1722,
+        "usage": {
+          "completion_tokens": 342,
+          "prompt_tokens": 72056,
+          "total_tokens": 72398,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251204_140621_4473",
+        "success": true,
+        "response_length": 1722,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}

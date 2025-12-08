@@ -1,0 +1,119 @@
+{
+  "run_id": "20251208_112953_7904",
+  "timestamp": "2025-12-08T11:30:56.741228",
+  "query": "What was Intel's market share in the x86 CPU market as of 2023?",
+  "result": {
+    "answer": "As of 2023, Intel held a 68.4% market share in the x86 CPU market.",
+    "run_id": "20251208_112953_7904"
+  },
+  "num_documents": 1,
+  "traces": [
+    {
+      "event_type": "query_start",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112953_7904",
+        "question": "What was Intel's market share in the x86 CPU market as of 2023?",
+        "question_length": 63,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Intel's market share in the x86 CPU market as of 2023?",
+        "query_length": 63,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          12
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_start",
+        "query": "What was Intel's market share in the x86 CPU market as of 2023?",
+        "query_length": 63,
+        "top_k": 3,
+        "total_documents": 1
+      }
+    },
+    {
+      "event_type": "retrieval",
+      "component": "retriever",
+      "data": {
+        "operation": "retrieve_complete",
+        "num_retrieved": 1,
+        "scores": [
+          12
+        ],
+        "document_ids": [
+          0
+        ]
+      }
+    },
+    {
+      "event_type": "llm_call",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "model": "gpt-4o",
+        "query": "What was Intel's market share in the x86 CPU market as of 2023?",
+        "prompt_length": 255328,
+        "context_length": 255015,
+        "num_context_docs": 1
+      }
+    },
+    {
+      "event_type": "llm_response",
+      "component": "openai_api",
+      "data": {
+        "operation": "generate_response",
+        "response_length": 66,
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 72062,
+          "total_tokens": 72086,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "model": "gpt-4o"
+      }
+    },
+    {
+      "event_type": "query_complete",
+      "component": "rag_system",
+      "data": {
+        "run_id": "20251208_112953_7904",
+        "success": true,
+        "response_length": 66,
+        "num_retrieved": 1
+      }
+    }
+  ]
+}
